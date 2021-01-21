@@ -4,25 +4,6 @@
   
   
   <entry>
-    <title>对于测试的小总结</title>
-    <link href="/2020/09/10/%E5%AF%B9%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/"/>
-    <url>/2020/09/10/%E5%AF%B9%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>测试</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Git命令总结</title>
     <link href="/2020/09/04/Git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
     <url>/2020/09/04/Git%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</url>
@@ -30,25 +11,6 @@
     <content type="html"><![CDATA[]]></content>
     
     
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>我的技能点总结</title>
-    <link href="/2020/09/04/%E6%88%91%E7%9A%84%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/"/>
-    <url>/2020/09/04/%E6%88%91%E7%9A%84%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/</url>
-    
-    <content type="html"><![CDATA[<h1 id="技能点"><a href="#技能点" class="headerlink" title="技能点"></a>技能点</h1><ol><li><h5 id="熟练掌握Python语言，掌握常用的包以及第三方扩展包"><a href="#熟练掌握Python语言，掌握常用的包以及第三方扩展包" class="headerlink" title="熟练掌握Python语言，掌握常用的包以及第三方扩展包"></a>熟练掌握Python语言，掌握常用的包以及第三方扩展包</h5></li></ol><pre><code class="hljs bash">常用的包：pip、Requests、第三方扩展包：socket</code></pre><ol start="2"><li><h5 id="熟练掌握WebDriver、Selenium、Xpath等测试模块"><a href="#熟练掌握WebDriver、Selenium、Xpath等测试模块" class="headerlink" title="熟练掌握WebDriver、Selenium、Xpath等测试模块"></a>熟练掌握WebDriver、Selenium、Xpath等测试模块</h5></li></ol><pre><code class="hljs bash">(1).WebDriverWebDriver：各浏览器厂商提供的用来自动化操作浏览器的API（模块）(2).Selenium可以说它是一个框架，也可以说它是一套用来自动化操作各种浏览器的工具集，目前主要用于Web测试自动化(3).Xpath用来查找元素信息的语言，用于编写自动化脚本时查找相对应元素</code></pre><ol start="3"><li><h5 id="熟练掌握单元测试Unittest框架，能够进行模块化测试"><a href="#熟练掌握单元测试Unittest框架，能够进行模块化测试" class="headerlink" title="熟练掌握单元测试Unittest框架，能够进行模块化测试"></a>熟练掌握单元测试Unittest框架，能够进行模块化测试</h5></li></ol><p><img src="/img/unit.png"></p><pre><code class="hljs bash">Unittest是Python自置的单元测试框架---断言、夹具、套件、TestLoader、测试报告(1).unittest自带断言、方法多(2).TestFixture--夹具模块级 &gt; 类级 &gt; 实例级模块级：一个模块，执行一次    类级：一个类的所有测试方法前后，执行一次    实例级：每个测试方法前后执行(3).<span class="hljs-built_in">test</span> suite --套件1.组装测试用例，规定用例的执行的顺序2.组织多个文件中的测试用例！！！运行套件对象---unittest.TestTestRunner().run(测试套件对象)(4).TestLoader通过指定规则，快速找到所有的测试用例（即一个TestSuite）(5).测试报告-1-.txt格式的结果：在创建TestTestRunner的时候指定参数即可stream默认为None，代表标准输出，可以指定为某个文件（通过调用open）verbosity数字0静默 1默认（成功为点，失败为E）2显示完整信息-2-.使用pycharm导出html结果-3-.通过安装扩展生成HTML报告（先下载包 html-testRunner）</code></pre><ol start="4"><li><h5 id="熟练掌握关系型数据库（MySQL），熟练使用SQL语句进行数据库操作"><a href="#熟练掌握关系型数据库（MySQL），熟练使用SQL语句进行数据库操作" class="headerlink" title="熟练掌握关系型数据库（MySQL），熟练使用SQL语句进行数据库操作"></a>熟练掌握关系型数据库（MySQL），熟练使用SQL语句进行数据库操作</h5></li></ol><pre><code class="hljs bash">1.分页：<span class="hljs-built_in">limit</span>2.去重查询：select distinct xxx from xxx3.查询建库、建表语句：show create database(table) xxname...</code></pre><ol start="5"><li><h5 id="熟悉掌握Windows与Linux操作系统，可搭建测试环境"><a href="#熟悉掌握Windows与Linux操作系统，可搭建测试环境" class="headerlink" title="熟悉掌握Windows与Linux操作系统，可搭建测试环境"></a>熟悉掌握Windows与Linux操作系统，可搭建测试环境</h5></li></ol><pre><code class="hljs bash">Linux常用命令ls:显示文件或目录mkdir:创建目录<span class="hljs-built_in">cd</span>:切换目录touch:创建空文件cat:查看文件内容cp:拷贝mv:移动或重命名rm:删除文件find:在文件系统中搜索某文件<span class="hljs-built_in">pwd</span>:当前目录路径ps:查看进程状态ifconfig:查看网络ping:测试网络<span class="hljs-built_in">kill</span>:杀死进程----------------------------------------------测试环境软件+硬件+网络软件：操作系统硬件：PC机还是笔记本需要的环境、数据库、svn</code></pre><ol start="6"><li><h5 id="熟悉掌握Python-Selenium-WebDriver自动化测试框架"><a href="#熟悉掌握Python-Selenium-WebDriver自动化测试框架" class="headerlink" title="熟悉掌握Python+Selenium+WebDriver自动化测试框架"></a>熟悉掌握Python+Selenium+WebDriver自动化测试框架</h5></li></ol><pre><code class="hljs bash">看 Python、Selenium、WebDriver</code></pre><ol start="7"><li><h5 id="熟悉掌握软件测试的开发、测试模型、边界值、因果图、正交表等"><a href="#熟悉掌握软件测试的开发、测试模型、边界值、因果图、正交表等" class="headerlink" title="熟悉掌握软件测试的开发、测试模型、边界值、因果图、正交表等"></a>熟悉掌握软件测试的开发、测试模型、边界值、因果图、正交表等</h5></li></ol><pre><code class="hljs bash">开发模型：瀑布测试模型：V模型、W模型、H模型V：先由开发完成编码任务，再切入测试W：相当于V，强调了测试工作的先行和对系统需求的测试开发一个V，测试一个V，测试伴随着整个开发周期H：强调测试是独立的，只要测试准备完成，就可以执行测试------------------------------------------------等价类划分：把所有可能输入的数据，选取具有可代表性数据作为设计测试用例有有效等价类 与 无效等价类---边界值：如果输入条件规定了选取值的范围，那就必须是刚刚在这个范围里的边界值作为测试输入数据---因果图：当判定的条件着重考虑输入输出条件之间的关系时使用因果图法---正交法：用来研究需求中存在多个因素，每个因素存在多个取值的用例设计方法正交表：均匀分散，齐整可比，（通过因素和水平数制作的）</code></pre><ol start="8"><li><h5 id="熟悉软件测试流程和测试基础理论，根据需求编写测试用例，执行测试用例"><a href="#熟悉软件测试流程和测试基础理论，根据需求编写测试用例，执行测试用例" class="headerlink" title="熟悉软件测试流程和测试基础理论，根据需求编写测试用例，执行测试用例"></a>熟悉软件测试流程和测试基础理论，根据需求编写测试用例，执行测试用例</h5></li></ol><pre><code class="hljs bash">流程：需求分析 -&gt; 测试计划 -&gt; 测试设计 -&gt; 测试用例 -&gt; 执行测试 -&gt; 测试报告---测试用例的特性：有效性、可复用性、易组织性、可评估性、可管理性测试用例的编制要素：1.测试编号 2.测试模块 3.测试标题 4.用例级别 5.测试环境 6.测试输入 7.测试步骤 8.预期结果</code></pre><ol start="9"><li>熟练使用分布式版本管理工具Git的使用，了解SVN</li></ol><pre><code class="hljs bash">略</code></pre>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>面试</tag>
-      
-    </tags>
     
   </entry>
   
@@ -74,37 +36,11 @@
   
   
   <entry>
-    <title>我的第一篇博客</title>
-    <link href="/2020/09/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-    <url>/2020/09/02/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-    
-    <content type="html"><![CDATA[<h2 id="吕恩光叼毛"><a href="#吕恩光叼毛" class="headerlink" title="吕恩光叼毛"></a>吕恩光叼毛</h2><p>11111</p><hr>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Hello World</title>
     <link href="/2020/09/02/hello-world/"/>
     <url>/2020/09/02/hello-world/</url>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="hljs bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="hljs bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="hljs bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title></title>
-    <link href="/2020/08/24/unittest%E6%80%BB%E7%BB%93/"/>
-    <url>/2020/08/24/unittest%E6%80%BB%E7%BB%93/</url>
-    
-    <content type="html"><![CDATA[<h1 id="unittest总结"><a href="#unittest总结" class="headerlink" title="unittest总结"></a>unittest总结</h1><p><strong>unittest</strong> — <em>单元测试框架</em></p><ol><li><p>unittest自带断言（方法多）</p></li><li><p>TestFixture（# 夹具）</p><ol><li><p>模块级 &gt; 类级 &gt; 实例级 </p><ol><li>模块级：一个模块，执行一次</li><li>类级：一个类的所有测试方法前后，执行一次</li><li>实例级：每个测试方法前后会执行 （用于用例执行后的善后工作）</li></ol><p>**一个模块 **⬇</p><pre><code class="hljs jboss-cli"><span class="hljs-keyword">set</span>UpModule-模块级<span class="hljs-keyword">set</span>UpClass-类级TC1 setup-实例级test_aTC1 teardwon-实例级<span class="hljs-string">.TC1</span> setup-实例级（初始化）test_bTC1 teardwon-实例级（销毁）<span class="hljs-string">.tearDownClass-</span>类级tearDownModule-模块级</code></pre></li></ol></li><li><p>test suite 套件</p><ol><li>组织测试先后顺序</li><li>组织多个文件中的测试用例</li><li>怎么用</li></ol><blockquote><ul><li>创建测试套件对象</li><li>添加要测试的类或者方法</li><li>执行测试套件<ul><li>创建测试套件对象（s = unittest.TestSuite（））</li><li>添加测试的类或方法<ul><li>addTest（）与 addTests（）里面使用列表或map函数<ul><li>addTest添加一个特殊类时，有两种方法<ul><li>addTest（defaultTestLoader.loadTestsFromTestCase（测 试的类））<ul><li><strong>👆</strong> 需要导包 from unittest.loader import defaultTestLoader</li></ul></li><li>addTest（makeSuite（测试的类））<ul><li><strong>👆</strong> 需要导包 from unittest.loader import makeSuite（红色下划线不用在乎）</li></ul></li></ul></li><li>addTests添加多个测试方法<ul><li>addTests（map（测试类，[‘测试方法’，’测试方法’]））</li><li>addTests（[测试类（’测试方法‘），测试类（’测试方法‘）]）</li></ul></li></ul></li></ul></li><li>运行测试套件对象<ul><li>unittest.TestTestRunner（）.run（测试套件对象）</li><li>想要得到打印信息的话，把结果写入到 TestResult中。<ul><li>在TestTestRunner（）括号中，写上信息存放的文件名，</li><li>第二个参数failfast  ，True：代表出错了就停止，False：没出错全部执行</li></ul></li></ul></li></ul></li></ul></blockquote></li><li><p>TetsLoader</p><p>通过指定规则，快速找到所有的测试用例(即一个TestSuite)</p><pre><code class="hljs python">test_dir = <span class="hljs-string">&#x27;./&#x27;</span><span class="hljs-comment"># 找到当前目录下的 所有 以 test_开头的 .py结尾的文件 ,并组织成一个TestSuite</span>suite = unittest.defaultTestLoader.discover(test_dir, pattern=<span class="hljs-string">&#x27;test_*.py&#x27;</span>)<span class="hljs-comment"># 执行TestSuite</span>runner=unittest.TextTestRunner()runner.run(suite)</code></pre></li><li><p>测试报告</p><ol><li><p>txt格式的结果</p><p>在创建TextTestRunner的时候指定参数即可</p><p>stream 默认为None，代表标准输出。可以指定为某个文件 (通过调用open)</p><p>verbosity 数字 0 静默 1默认 (成功为点 失败为E) 2 显示完整信息</p></li><li><p>使用pycharm导出html结果</p></li><li><p>通过安装扩展生成HTMl报告（先下载包 pip install html-testRunner）</p><pre><code class="hljs python"><span class="hljs-keyword">import</span> HtmlTestRunnerrunner = HtmlTestRunner.runner.HTMLTestRunner()runner.run(suite)</code></pre></li></ol></li></ol>]]></content>
     
     
     
