@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Vim学习</title>
+    <link href="/2021/02/09/Vim%E5%AD%A6%E4%B9%A0/"/>
+    <url>/2021/02/09/Vim%E5%AD%A6%E4%B9%A0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h1><h3 id="vim的几种模式"><a href="#vim的几种模式" class="headerlink" title="vim的几种模式"></a>vim的几种模式</h3><span class="label label-primary">命令模式</span> <span class="label label-default">插入模式</span> <span class="label label-info">底线命令模式</span><div class="note note-success">            <p>命令模式</p>          </div>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>vim</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>对于测试的小总结</title>
     <link href="/2020/09/10/%E5%AF%B9%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/"/>
     <url>/2020/09/10/%E5%AF%B9%E4%BA%8E%E6%B5%8B%E8%AF%95%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/</url>
