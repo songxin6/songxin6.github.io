@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>ubuntu使用趣事</title>
+    <link href="/2021/03/10/ubuntu%E4%BD%BF%E7%94%A8%E8%B6%A3%E4%BA%8B/"/>
+    <url>/2021/03/10/ubuntu%E4%BD%BF%E7%94%A8%E8%B6%A3%E4%BA%8B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="系统：ubuntu18-04"><a href="#系统：ubuntu18-04" class="headerlink" title="系统：ubuntu18.04"></a>系统：ubuntu18.04</h1><ol><li><p>ubuntu自带源更新慢</p><blockquote><p>把自带源更新了</p><ol><li><p>文件（sources.list）地址 /etc/apt/sources.list</p></li><li><p>备份文件 cp sources.list sources.list_backup</p></li><li><p>修改文件 sudo gedit sources.list</p></li><li><p>添加阿里源</p><pre><code class="hljs awk">deb http:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/ubuntu/</span> bionic main restricted universe multiversedeb http:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/ubuntu/</span> bionic-security main restricted universe multiversedeb http:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/ubuntu/</span> bionic-updates main restricted universe multiversedeb http:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/ubuntu/</span> bionic-proposed main restricted universe multiversedeb http:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/ubuntu/</span> bionic-backports main restricted universe multiversedeb-src http:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/ubuntu/</span> bionic main restricted universe multiversedeb-src http:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/ubuntu/</span> bionic-security main restricted universe multiversedeb-src http:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/ubuntu/</span> bionic-updates main restricted universe multiversedeb-src http:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/ubuntu/</span> bionic-proposed main restricted universe multiversedeb-src http:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/ubuntu/</span> bionic-backports main restricted universe multiverse</code></pre></li><li><p>更新 sudo apt-get update &amp;&amp; sudo apt-get upgrade</p></li></ol></blockquote></li><li><p>安装python3.6</p><blockquote><p>sudo apt install python3.6</p><p>好像ubuntu有自带python3，但是我在 sudo apt-get update之前死活进不了python环境，update之后，才正常进入（养成习惯，每次操作前，都要update一下）</p></blockquote></li><li><p>安装Python虚拟环境</p><blockquote><p>先安装软件包</p><p>sudo apt install virtualenv</p><p>sudo apt install virtualenvwrapper</p><p>然后去安装，但是！俺发现没有pip3，于是先下载了一下pip3</p><p>sudo apt install python3-pip</p><p>有了pip3我就可以顺理成章下载安装虚拟环境了</p><p>pip3 install virtualenv</p><p>pip3 install virtualenvwrapper</p><p>安装完成后去配置一下环境，进入home目录，找到.bashrc文件</p><p>sudo gedit ~/.bashrc</p><p>在最后面加上三行信息</p><pre><code class="hljs routeros"><span class="hljs-builtin-name">export</span> <span class="hljs-attribute">WORKON_HOME</span>=<span class="hljs-variable">$HOME</span>/.virtualenvs<span class="hljs-builtin-name">export</span> <span class="hljs-attribute">VIRTUALENVWRAPPER_PYTHON</span>=<span class="hljs-string">&#x27;/usr/bin/python3.6&#x27;</span>source /usr/share/virtualenvwrapper/virtualenvwrapper.sh</code></pre><p>保存文件，运行一下</p><p>source ~/.bashrc</p></blockquote></li><li><p>创建虚拟环境</p><blockquote><p>创建命令</p><p>mkvirtualenv 虚拟环境名称</p><p>mkvirtualenv -p python3 虚拟环境名称</p><p>我用的后面一句，然后问题出来了（报错如下）</p><p>The path /home/python3 (from –python=/home/python3) does not exist</p><p>一直表示路径不存在，百度了一下没找到解决方法，然后去找了一下我的大佬室友，把它改成了绝对路径，解决了这个问题</p><p>mkvirtualenv -p /usr/bin/python3 虚拟环境名称</p><p>（要是找不到python3路径可以使用 which python3 进行查找）</p></blockquote></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>系统</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Ubuntu</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Vim学习</title>
     <link href="/2021/02/09/Vim%E5%AD%A6%E4%B9%A0/"/>
     <url>/2021/02/09/Vim%E5%AD%A6%E4%B9%A0/</url>
