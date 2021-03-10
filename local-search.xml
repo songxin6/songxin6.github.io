@@ -83,6 +83,33 @@
   
   
   <entry>
+    <title>unittest总结</title>
+    <link href="/2020/09/03/unittest%E6%80%BB%E7%BB%93/"/>
+    <url>/2020/09/03/unittest%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="unittest总结"><a href="#unittest总结" class="headerlink" title="unittest总结"></a>unittest总结</h1><p><strong>unittest</strong> — <em>单元测试框架</em></p><ol><li><p>unittest自带断言（方法多）</p></li><li><p>TestFixture（# 夹具）</p><ol><li><p>模块级 &gt; 类级 &gt; 实例级 </p><ol><li>模块级：一个模块，执行一次</li><li>类级：一个类的所有测试方法前后，执行一次</li><li>实例级：每个测试方法前后会执行 （用于用例执行后的善后工作）</li></ol><p>**一个模块 **⬇</p><pre><code class="hljs jboss-cli"><span class="hljs-keyword">set</span>UpModule-模块级<span class="hljs-keyword">set</span>UpClass-类级TC1 setup-实例级test_aTC1 teardwon-实例级<span class="hljs-string">.TC1</span> setup-实例级（初始化）test_bTC1 teardwon-实例级（销毁）<span class="hljs-string">.tearDownClass-</span>类级tearDownModule-模块级</code></pre></li></ol></li><li><p>test suite 套件</p><ol><li>组织测试先后顺序</li><li>组织多个文件中的测试用例</li><li>怎么用</li></ol><blockquote><ul><li>创建测试套件对象</li><li>添加要测试的类或者方法</li><li>执行测试套件<ul><li>创建测试套件对象（s = unittest.TestSuite（））</li><li>添加测试的类或方法<ul><li>addTest（）与 addTests（）里面使用列表或map函数<ul><li>addTest添加一个特殊类时，有两种方法<ul><li>addTest（defaultTestLoader.loadTestsFromTestCase（测 试的类））<ul><li><strong>👆</strong> 需要导包 from unittest.loader import defaultTestLoader</li></ul></li><li>addTest（makeSuite（测试的类））<ul><li><strong>👆</strong> 需要导包 from unittest.loader import makeSuite（红色下划线不用在乎）</li></ul></li></ul></li><li>addTests添加多个测试方法<ul><li>addTests（map（测试类，[‘测试方法’，’测试方法’]））</li><li>addTests（[测试类（’测试方法‘），测试类（’测试方法‘）]）</li></ul></li></ul></li></ul></li><li>运行测试套件对象<ul><li>unittest.TestTestRunner（）.run（测试套件对象）</li><li>想要得到打印信息的话，把结果写入到 TestResult中。<ul><li>在TestTestRunner（）括号中，写上信息存放的文件名，</li><li>第二个参数failfast  ，True：代表出错了就停止，False：没出错全部执行</li></ul></li></ul></li></ul></li></ul></blockquote></li><li><p>TetsLoader</p><p>通过指定规则，快速找到所有的测试用例(即一个TestSuite)</p><pre><code class="hljs python">test_dir = <span class="hljs-string">&#x27;./&#x27;</span><span class="hljs-comment"># 找到当前目录下的 所有 以 test_开头的 .py结尾的文件 ,并组织成一个TestSuite</span>suite = unittest.defaultTestLoader.discover(test_dir, pattern=<span class="hljs-string">&#x27;test_*.py&#x27;</span>)<span class="hljs-comment"># 执行TestSuite</span>runner=unittest.TextTestRunner()runner.run(suite)</code></pre></li><li><p>测试报告</p><ol><li><p>txt格式的结果</p><p>在创建TextTestRunner的时候指定参数即可</p><p>stream 默认为None，代表标准输出。可以指定为某个文件 (通过调用open)</p><p>verbosity 数字 0 静默 1默认 (成功为点 失败为E) 2 显示完整信息</p></li><li><p>使用pycharm导出html结果</p></li><li><p>通过安装扩展生成HTMl报告（先下载包 pip install html-testRunner）</p><pre><code class="hljs python"><span class="hljs-keyword">import</span> HtmlTestRunnerrunner = HtmlTestRunner.runner.HTMLTestRunner()runner.run(suite)</code></pre></li></ol></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>编程</category>
+      
+      <category>测试</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>unittest</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>赵➕7憨憨</title>
     <link href="/2020/09/02/%E8%B5%B5%E2%9E%957%E6%86%A8%E6%86%A8/"/>
     <url>/2020/09/02/%E8%B5%B5%E2%9E%957%E6%86%A8%E6%86%A8/</url>
@@ -122,33 +149,6 @@
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="hljs bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="hljs bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="hljs bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>unittest总结</title>
-    <link href="/2020/09/01/unittest%E6%80%BB%E7%BB%93/"/>
-    <url>/2020/09/01/unittest%E6%80%BB%E7%BB%93/</url>
-    
-    <content type="html"><![CDATA[<h1 id="unittest总结"><a href="#unittest总结" class="headerlink" title="unittest总结"></a>unittest总结</h1><p><strong>unittest</strong> — <em>单元测试框架</em></p><ol><li><p>unittest自带断言（方法多）</p></li><li><p>TestFixture（# 夹具）</p><ol><li><p>模块级 &gt; 类级 &gt; 实例级 </p><ol><li>模块级：一个模块，执行一次</li><li>类级：一个类的所有测试方法前后，执行一次</li><li>实例级：每个测试方法前后会执行 （用于用例执行后的善后工作）</li></ol><p>**一个模块 **⬇</p><pre><code class="hljs jboss-cli"><span class="hljs-keyword">set</span>UpModule-模块级<span class="hljs-keyword">set</span>UpClass-类级TC1 setup-实例级test_aTC1 teardwon-实例级<span class="hljs-string">.TC1</span> setup-实例级（初始化）test_bTC1 teardwon-实例级（销毁）<span class="hljs-string">.tearDownClass-</span>类级tearDownModule-模块级</code></pre></li></ol></li><li><p>test suite 套件</p><ol><li>组织测试先后顺序</li><li>组织多个文件中的测试用例</li><li>怎么用</li></ol><blockquote><ul><li>创建测试套件对象</li><li>添加要测试的类或者方法</li><li>执行测试套件<ul><li>创建测试套件对象（s = unittest.TestSuite（））</li><li>添加测试的类或方法<ul><li>addTest（）与 addTests（）里面使用列表或map函数<ul><li>addTest添加一个特殊类时，有两种方法<ul><li>addTest（defaultTestLoader.loadTestsFromTestCase（测 试的类））<ul><li><strong>👆</strong> 需要导包 from unittest.loader import defaultTestLoader</li></ul></li><li>addTest（makeSuite（测试的类））<ul><li><strong>👆</strong> 需要导包 from unittest.loader import makeSuite（红色下划线不用在乎）</li></ul></li></ul></li><li>addTests添加多个测试方法<ul><li>addTests（map（测试类，[‘测试方法’，’测试方法’]））</li><li>addTests（[测试类（’测试方法‘），测试类（’测试方法‘）]）</li></ul></li></ul></li></ul></li><li>运行测试套件对象<ul><li>unittest.TestTestRunner（）.run（测试套件对象）</li><li>想要得到打印信息的话，把结果写入到 TestResult中。<ul><li>在TestTestRunner（）括号中，写上信息存放的文件名，</li><li>第二个参数failfast  ，True：代表出错了就停止，False：没出错全部执行</li></ul></li></ul></li></ul></li></ul></blockquote></li><li><p>TetsLoader</p><p>通过指定规则，快速找到所有的测试用例(即一个TestSuite)</p><pre><code class="hljs python">test_dir = <span class="hljs-string">&#x27;./&#x27;</span><span class="hljs-comment"># 找到当前目录下的 所有 以 test_开头的 .py结尾的文件 ,并组织成一个TestSuite</span>suite = unittest.defaultTestLoader.discover(test_dir, pattern=<span class="hljs-string">&#x27;test_*.py&#x27;</span>)<span class="hljs-comment"># 执行TestSuite</span>runner=unittest.TextTestRunner()runner.run(suite)</code></pre></li><li><p>测试报告</p><ol><li><p>txt格式的结果</p><p>在创建TextTestRunner的时候指定参数即可</p><p>stream 默认为None，代表标准输出。可以指定为某个文件 (通过调用open)</p><p>verbosity 数字 0 静默 1默认 (成功为点 失败为E) 2 显示完整信息</p></li><li><p>使用pycharm导出html结果</p></li><li><p>通过安装扩展生成HTMl报告（先下载包 pip install html-testRunner）</p><pre><code class="hljs python"><span class="hljs-keyword">import</span> HtmlTestRunnerrunner = HtmlTestRunner.runner.HTMLTestRunner()runner.run(suite)</code></pre></li></ol></li></ol>]]></content>
-    
-    
-    <categories>
-      
-      <category>编程</category>
-      
-      <category>测试</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>unittest</tag>
-      
-    </tags>
     
   </entry>
   
