@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>jmeter基础组件功能 | August</title><meta name="keywords" content="Jmeter"><meta name="author" content="小昕"><meta name="copyright" content="小昕"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="转载于https:&#x2F;&#x2F;www.cnblogs.com&#x2F;hyf20131113&#x2F;articles&#x2F;10697849.html    TestPlan 测试计划TestPlan是jmeter脚本的根节点，包含了jmeter脚本和场景执行的所有动作 差异：loadrunner中脚本和场景是分开的 - jmeter中脚本和场景是混在一起的（一个jmx文件既是脚本又是场景）  Threads(User) 线">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jmeter基础组件功能">
+<meta property="og:url" content="http://example.com/2021/06/29/jmeter%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E5%8A%9F%E8%83%BD/index.html">
+<meta property="og:site_name" content="August">
+<meta property="og:description" content="转载于https:&#x2F;&#x2F;www.cnblogs.com&#x2F;hyf20131113&#x2F;articles&#x2F;10697849.html    TestPlan 测试计划TestPlan是jmeter脚本的根节点，包含了jmeter脚本和场景执行的所有动作 差异：loadrunner中脚本和场景是分开的 - jmeter中脚本和场景是混在一起的（一个jmx文件既是脚本又是场景）  Threads(User) 线">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-06-29T02:58:25.000Z">
+<meta property="article:modified_time" content="2021-06-29T03:01:04.000Z">
+<meta property="article:author" content="小昕">
+<meta property="article:tag" content="Jmeter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zhao-jiaqi/Jing/img/20210609103103.svg"><link rel="canonical" href="http://example.com/2021/06/29/jmeter%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E5%8A%9F%E8%83%BD/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-06-29 11:01:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/cu.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/card.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/font.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/background.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://z3.ax1x.com/2021/04/19/cooE8O.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/pics/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/bb/"><i class="fa-fw fas fa-bomb"></i><span> 哔哔</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">August</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/pics/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/bb/"><i class="fa-fw fas fa-bomb"></i><span> 哔哔</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">jmeter基础组件功能</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-29T02:58:25.000Z" title="发表于 2021-06-29 10:58:25">2021-06-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-06-29T03:01:04.000Z" title="更新于 2021-06-29 11:01:04">2021-06-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B7%A5%E5%85%B7%F0%9F%94%A7/">工具🔧</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B7%A5%E5%85%B7%F0%9F%94%A7/jmeter/">jmeter</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="jmeter基础组件功能"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="note blue icon simple"><i class="note-icon fas fa-bullhorn"></i><p>转载于<a target="_blank" rel="noopener" href="https://www.cnblogs.com/hyf20131113/articles/10697849.html">https://www.cnblogs.com/hyf20131113/articles/10697849.html</a></p>
+</div>
+
+<ol>
+<li><h3 id="TestPlan-测试计划"><a href="#TestPlan-测试计划" class="headerlink" title="TestPlan 测试计划"></a>TestPlan 测试计划</h3><p>TestPlan是jmeter脚本的根节点，包含了jmeter脚本和场景执行的所有动作</p>
+<p>差异：<strong>loadrunner</strong>中脚本和场景是分开的 - <strong>jmeter</strong>中脚本和场景是混在一起的（一个jmx文件既是脚本又是场景）</p>
+</li>
+<li><h3 id="Threads-User-线程组"><a href="#Threads-User-线程组" class="headerlink" title="Threads(User) 线程组"></a>Threads(User) 线程组</h3><p>Threads(User)就是Thread Group线程组，是一组执行相同测试案例操作的用户（线程）</p>
+<p>简而言之就是<strong>jmeter</strong>的脚本，等同于<strong>loadrunner</strong>的脚本概念</p>
+</li>
+<li><h3 id="Sampler-取样器（HTTP请求）"><a href="#Sampler-取样器（HTTP请求）" class="headerlink" title="Sampler 取样器（HTTP请求）"></a>Sampler 取样器（HTTP请求）</h3><p>Sampler取样器是jmeter中实际执行压力请求操作的组件</p>
+</li>
+<li><h3 id="Logic-Controller-逻辑控制器"><a href="#Logic-Controller-逻辑控制器" class="headerlink" title="Logic Controller 逻辑控制器"></a>Logic Controller 逻辑控制器</h3><p>Logic Controller逻辑控制器用来控制Sampler取样器的执行顺序</p>
+<p>其中Transaction Controller事务控制器，可以将多个取样器合并为一个交易事务</p>
+</li>
+<li><h3 id="Pre-Processors-前置处理器"><a href="#Pre-Processors-前置处理器" class="headerlink" title="Pre   Processors 前置处理器"></a>Pre   Processors 前置处理器</h3><p>Pre Processors前置处理器是在Sampler取样器前执行，可以用来执行参数定义，交易报文拼接等</p>
+<p>前置处理器会在它作用域范围内的所有Sampler执行前执行，如果一个ThreadGroup(线程组)中有多个Sampler时，希望每次迭代时前置处理器只执行一次，可以将前置处理器放在第一个Sampler节点下面作为子节点</p>
+</li>
+<li><h3 id="Post-Processors-后置处理器"><a href="#Post-Processors-后置处理器" class="headerlink" title="Post   Processors 后置处理器"></a>Post   Processors 后置处理器</h3><p>Post Processors后置处理器在它作用域下的所有的取样器执行结束后执行</p>
+<p>如果希望后置处理器只对某一个取样器生效，可以将它放在这个取样器下作为子节点</p>
+</li>
+<li><h3 id="Assertion-断言"><a href="#Assertion-断言" class="headerlink" title="Assertion 断言"></a>Assertion 断言</h3><p>Assertion断言在它作用域下的所有Sampler取样器之后执行（断言也在后置处理器之后执行）</p>
+<p>如果希望断言只对某一个取样器生效，可以将它放在这个取样器下作为子节点</p>
+<p>同：断言相当于<strong>loadrunner</strong>里面的检查点的概念</p>
+</li>
+<li><h3 id="Timer-定时器"><a href="#Timer-定时器" class="headerlink" title="Timer 定时器"></a>Timer 定时器</h3><p>定时器是在它作用域内的所有取样器执行之前执行生效</p>
+<p>定时器最主要的作用就是用来控制测试场景的吞吐量大小</p>
+<p>类似与<strong>loadrunner</strong>里面的TPS</p>
+</li>
+<li><h3 id="TestFregment-测试片段"><a href="#TestFregment-测试片段" class="headerlink" title="TestFregment 测试片段"></a>TestFregment 测试片段</h3><p>TestFregment测试片段的作用是连接Include Controller和Module Controller</p>
+</li>
+<li><h3 id="ConfigElement-配置元件"><a href="#ConfigElement-配置元件" class="headerlink" title="ConfigElement 配置元件"></a>ConfigElement 配置元件</h3><p>ConfigElement配置元件用来配置jmeter的各种参数</p>
+</li>
+<li><h3 id="Listener-监听器"><a href="#Listener-监听器" class="headerlink" title="Listener 监听器"></a>Listener 监听器</h3><p>Listener监听器展示Sampler取样器的结果，可以通过Listener了解测试场景的执行情况</p>
+<p>需要注意的是，在jmeter的CLI命令行执行时 Listener是不处理Sampler的结果数据的</p>
+<div class="note orange icon disabled"><i class="note-icon fas fa-battery-half"></i><p>CLI命令行执行：指jmeter的非GUI运行方式，无界面，在命令窗口通过命令行运行场景</p>
+</div>
+
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">小昕</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/06/29/jmeter%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E5%8A%9F%E8%83%BD/">http://example.com/2021/06/29/jmeter基础组件功能/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">August</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Jmeter/">Jmeter</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/06/08/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-%E6%B5%8B%E8%AF%95%E7%82%B9/"><img class="next-cover" src="http://cdn.lshck.cn/image/sx/sx03.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">文件上传-测试点</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://z3.ax1x.com/2021/04/19/cooE8O.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">小昕</div><div class="author-info__description">日日升日，日落日日，旧旧依久久~</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://music.163.com/" target="_blank" title="网易云"><i class="iconfont icon-wangyiyunyinle"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">博客用于日常记录学习生活👏</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#TestPlan-%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92"><span class="toc-number">1.</span> <span class="toc-text">TestPlan 测试计划</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Threads-User-%E7%BA%BF%E7%A8%8B%E7%BB%84"><span class="toc-number">2.</span> <span class="toc-text">Threads(User) 线程组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sampler-%E5%8F%96%E6%A0%B7%E5%99%A8%EF%BC%88HTTP%E8%AF%B7%E6%B1%82%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">Sampler 取样器（HTTP请求）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Logic-Controller-%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">Logic Controller 逻辑控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pre-Processors-%E5%89%8D%E7%BD%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">5.</span> <span class="toc-text">Pre   Processors 前置处理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Post-Processors-%E5%90%8E%E7%BD%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text">Post   Processors 后置处理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Assertion-%E6%96%AD%E8%A8%80"><span class="toc-number">7.</span> <span class="toc-text">Assertion 断言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Timer-%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-number">8.</span> <span class="toc-text">Timer 定时器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TestFregment-%E6%B5%8B%E8%AF%95%E7%89%87%E6%AE%B5"><span class="toc-number">9.</span> <span class="toc-text">TestFregment 测试片段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ConfigElement-%E9%85%8D%E7%BD%AE%E5%85%83%E4%BB%B6"><span class="toc-number">10.</span> <span class="toc-text">ConfigElement 配置元件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Listener-%E7%9B%91%E5%90%AC%E5%99%A8"><span class="toc-number">11.</span> <span class="toc-text">Listener 监听器</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/06/29/jmeter%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E5%8A%9F%E8%83%BD/" title="jmeter基础组件功能"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jmeter基础组件功能"/></a><div class="content"><a class="title" href="/2021/06/29/jmeter%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E5%8A%9F%E8%83%BD/" title="jmeter基础组件功能">jmeter基础组件功能</a><time datetime="2021-06-29T02:58:25.000Z" title="发表于 2021-06-29 10:58:25">2021-06-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/08/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-%E6%B5%8B%E8%AF%95%E7%82%B9/" title="文件上传-测试点"><img src="http://cdn.lshck.cn/image/sx/sx03.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="文件上传-测试点"/></a><div class="content"><a class="title" href="/2021/06/08/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-%E6%B5%8B%E8%AF%95%E7%82%B9/" title="文件上传-测试点">文件上传-测试点</a><time datetime="2021-06-08T04:06:56.000Z" title="发表于 2021-06-08 12:06:56">2021-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/27/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-day01/" title="前端学习-day01"><img src="https://z3.ax1x.com/2021/05/27/2PHmA1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端学习-day01"/></a><div class="content"><a class="title" href="/2021/05/27/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-day01/" title="前端学习-day01">前端学习-day01</a><time datetime="2021-05-27T09:19:42.000Z" title="发表于 2021-05-27 17:19:42">2021-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/28/%E5%AD%A6%E4%B9%A0%EF%BC%9AVim/" title="学习：Vim"><img src="https://z3.ax1x.com/2021/04/28/gipjxg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学习：Vim"/></a><div class="content"><a class="title" href="/2021/04/28/%E5%AD%A6%E4%B9%A0%EF%BC%9AVim/" title="学习：Vim">学习：Vim</a><time datetime="2021-04-28T08:55:17.000Z" title="发表于 2021-04-28 16:55:17">2021-04-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/28/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/04/28/hello-world/" title="Hello World">Hello World</a><time datetime="2021-04-28T08:23:48.000Z" title="发表于 2021-04-28 16:23:48">2021-04-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 小昕</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'SH6WKttM8Jz5O3pi3AXFAbOI-gzGzoHsz',
+      appKey: 'qOEGQIm3dBnDrqc1dtfbl2yE',
+      placeholder: '记得留下你的昵称和邮箱....可以快速收到回复噢',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.16/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?songxin6";
+            var git_color =['#e4dfd7', '#f9f4dc', '#f7e8aa', '#f7e8aa', '#f8df72', '#fcd217', '#fcc515', '#f28e16', '#fb8b05', '#d85916', '#f43e06'];
+            var git_user ="songxin6";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style>undefined</style><!-- hexo injector body_end end --></body></html>
