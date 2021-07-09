@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>urlos安装redmine项目管理软件 | August</title><meta name="keywords" content="redmine"><meta name="author" content="小昕"><meta name="copyright" content="小昕"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="urlos安装redmine项目管理软件一. 安装urlos操作系统版本（我的）：ubuntu18.04  ssh连接系统，切换到root用户sudo -s  下载脚本并执行安装命令curl -O https:&#x2F;&#x2F;www.urlos.com&#x2F;siu &amp;&amp; sh siu  如果没有curl工具，执行apt-get install -y curl || yum -y install c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="urlos安装redmine项目管理软件">
+<meta property="og:url" content="http://example.com/2021/07/09/urlos%E5%AE%89%E8%A3%85redmine%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/index.html">
+<meta property="og:site_name" content="August">
+<meta property="og:description" content="urlos安装redmine项目管理软件一. 安装urlos操作系统版本（我的）：ubuntu18.04  ssh连接系统，切换到root用户sudo -s  下载脚本并执行安装命令curl -O https:&#x2F;&#x2F;www.urlos.com&#x2F;siu &amp;&amp; sh siu  如果没有curl工具，执行apt-get install -y curl || yum -y install c">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/zhao-jiaqi/Jing/img/060402.png">
+<meta property="article:published_time" content="2021-07-09T04:36:12.000Z">
+<meta property="article:modified_time" content="2021-07-09T04:42:40.000Z">
+<meta property="article:author" content="小昕">
+<meta property="article:tag" content="redmine">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/zhao-jiaqi/Jing/img/060402.png"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/zhao-jiaqi/Jing/img/20210629112739.svg"><link rel="canonical" href="http://example.com/2021/07/09/urlos%E5%AE%89%E8%A3%85redmine%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-07-09 12:42:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/css/cu.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/card.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/font.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/background.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://z3.ax1x.com/2021/04/19/cooE8O.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/pics/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/bb/"><i class="fa-fw fas fa-bomb"></i><span> 哔哔</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">August</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/pics/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></div><div class="menus_item"><a class="site-page" href="/bb/"><i class="fa-fw fas fa-bomb"></i><span> 哔哔</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">urlos安装redmine项目管理软件</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-07-09T04:36:12.000Z" title="发表于 2021-07-09 12:36:12">2021-07-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-07-09T04:42:40.000Z" title="更新于 2021-07-09 12:42:40">2021-07-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B7%A5%E5%85%B7%F0%9F%94%A7/">工具🔧</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B7%A5%E5%85%B7%F0%9F%94%A7/redmine/">redmine</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="urlos安装redmine项目管理软件"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="urlos安装redmine项目管理软件"><a href="#urlos安装redmine项目管理软件" class="headerlink" title="urlos安装redmine项目管理软件"></a>urlos安装redmine项目管理软件</h1><h3 id="一-安装urlos"><a href="#一-安装urlos" class="headerlink" title="一. 安装urlos"></a>一. 安装urlos</h3><p><strong>操作系统版本（我的）：ubuntu18.04</strong></p>
+<ol>
+<li><h4 id="ssh连接系统，切换到root用户"><a href="#ssh连接系统，切换到root用户" class="headerlink" title="ssh连接系统，切换到root用户"></a>ssh连接系统，切换到root用户</h4><p><code>sudo -s</code></p>
+</li>
+<li><h4 id="下载脚本并执行安装命令"><a href="#下载脚本并执行安装命令" class="headerlink" title="下载脚本并执行安装命令"></a>下载脚本并执行安装命令</h4><p><code>curl -O https://www.urlos.com/siu &amp;&amp; sh siu</code></p>
+<blockquote>
+<p>如果没有curl工具，执行<code>apt-get install -y curl || yum -y install curl</code>安装curl</p>
+</blockquote>
+</li>
+<li><h4 id="选择服务器所在区域"><a href="#选择服务器所在区域" class="headerlink" title="选择服务器所在区域"></a>选择服务器所在区域</h4><p><img src="https://cdn.jsdelivr.net/gh/zhao-jiaqi/Jing/img/20210709123931.png"></p>
+<p>国内服务器选1，下载缓慢选2，海外服务器选3</p>
+</li>
+<li><h4 id="选择数据的存储目录"><a href="#选择数据的存储目录" class="headerlink" title="选择数据的存储目录"></a>选择数据的存储目录</h4><p><img src="https://cdn.jsdelivr.net/gh/zhao-jiaqi/Jing/img/20210709123933.png"></p>
+</li>
+<li><h4 id="下载安装成功后重启"><a href="#下载安装成功后重启" class="headerlink" title="下载安装成功后重启"></a>下载安装成功后重启</h4><p>安装成功后会自动重启服务器，时间较长（1分钟左右）</p>
+</li>
+<li><h4 id="访问urlos"><a href="#访问urlos" class="headerlink" title="访问urlos"></a>访问urlos</h4><p><strong>前提条件：开放9966、9967、9968、9969端口（入站规则）</strong></p>
+<p>打开浏览器通过<code>https://IP:9966</code>或<code>http://IP:9968</code>访问urlos</p>
+<p>用户名与密码在安装中展示了，留意安装成功信息</p>
+</li>
+</ol>
+<h3 id="二-安装redmine"><a href="#二-安装redmine" class="headerlink" title="二. 安装redmine"></a>二. 安装redmine</h3><ol>
+<li><h4 id="登录urlos系统后台，在应用市场中搜索’redmine‘，找到后直接点击安装按钮"><a href="#登录urlos系统后台，在应用市场中搜索’redmine‘，找到后直接点击安装按钮" class="headerlink" title="登录urlos系统后台，在应用市场中搜索’redmine‘，找到后直接点击安装按钮"></a>登录urlos系统后台，在应用市场中搜索’redmine‘，找到后直接点击安装按钮</h4><p><img src="https://cdn.jsdelivr.net/gh/zhao-jiaqi/Jing/img/20210709123934.png"></p>
+</li>
+<li><h4 id="填写基本信息后-提交"><a href="#填写基本信息后-提交" class="headerlink" title="填写基本信息后 - 提交"></a>填写基本信息后 - 提交</h4><ul>
+<li>填写服务名称</li>
+<li>选择运行节点</li>
+<li>选择智能部署</li>
+</ul>
+</li>
+<li><h4 id="初始化redmine，访问http-IP-3000"><a href="#初始化redmine，访问http-IP-3000" class="headerlink" title="初始化redmine，访问http://IP:3000"></a>初始化redmine，访问<code>http://IP:3000</code></h4><p><img src="https://cdn.jsdelivr.net/gh/zhao-jiaqi/Jing/img/20210709123932.png"></p>
+</li>
+<li><h4 id="初始账号：admin，密码：admin"><a href="#初始账号：admin，密码：admin" class="headerlink" title="初始账号：admin，密码：admin"></a>初始账号：admin，密码：admin</h4></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">小昕</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/07/09/urlos%E5%AE%89%E8%A3%85redmine%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/">http://example.com/2021/07/09/urlos安装redmine项目管理软件/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">August</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/redmine/">redmine</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/zhao-jiaqi/Jing/img/060402.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/06/29/jmeter%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E5%8A%9F%E8%83%BD/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">jmeter基础组件功能</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://z3.ax1x.com/2021/04/19/cooE8O.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">小昕</div><div class="author-info__description">日日升日，日落日日，旧旧依久久~</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://music.163.com/" target="_blank" title="网易云"><i class="iconfont icon-wangyiyunyinle"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">博客用于日常记录学习生活👏</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#urlos%E5%AE%89%E8%A3%85redmine%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">urlos安装redmine项目管理软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E5%AE%89%E8%A3%85urlos"><span class="toc-number">1.0.1.</span> <span class="toc-text">一. 安装urlos</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ssh%E8%BF%9E%E6%8E%A5%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%88%87%E6%8D%A2%E5%88%B0root%E7%94%A8%E6%88%B7"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">ssh连接系统，切换到root用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E8%84%9A%E6%9C%AC%E5%B9%B6%E6%89%A7%E8%A1%8C%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">下载脚本并执行安装命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%89%80%E5%9C%A8%E5%8C%BA%E5%9F%9F"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">选择服务器所在区域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E7%9B%AE%E5%BD%95"><span class="toc-number">1.0.1.4.</span> <span class="toc-text">选择数据的存储目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F%E5%90%8E%E9%87%8D%E5%90%AF"><span class="toc-number">1.0.1.5.</span> <span class="toc-text">下载安装成功后重启</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AEurlos"><span class="toc-number">1.0.1.6.</span> <span class="toc-text">访问urlos</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-%E5%AE%89%E8%A3%85redmine"><span class="toc-number">1.0.2.</span> <span class="toc-text">二. 安装redmine</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BB%E5%BD%95urlos%E7%B3%BB%E7%BB%9F%E5%90%8E%E5%8F%B0%EF%BC%8C%E5%9C%A8%E5%BA%94%E7%94%A8%E5%B8%82%E5%9C%BA%E4%B8%AD%E6%90%9C%E7%B4%A2%E2%80%99redmine%E2%80%98%EF%BC%8C%E6%89%BE%E5%88%B0%E5%90%8E%E7%9B%B4%E6%8E%A5%E7%82%B9%E5%87%BB%E5%AE%89%E8%A3%85%E6%8C%89%E9%92%AE"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">登录urlos系统后台，在应用市场中搜索’redmine‘，找到后直接点击安装按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A1%AB%E5%86%99%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E5%90%8E-%E6%8F%90%E4%BA%A4"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">填写基本信息后 - 提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96redmine%EF%BC%8C%E8%AE%BF%E9%97%AEhttp-IP-3000"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">初始化redmine，访问http:&#x2F;&#x2F;IP:3000</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E8%B4%A6%E5%8F%B7%EF%BC%9Aadmin%EF%BC%8C%E5%AF%86%E7%A0%81%EF%BC%9Aadmin"><span class="toc-number">1.0.2.4.</span> <span class="toc-text">初始账号：admin，密码：admin</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/07/09/urlos%E5%AE%89%E8%A3%85redmine%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/" title="urlos安装redmine项目管理软件"><img src="https://cdn.jsdelivr.net/gh/zhao-jiaqi/Jing/img/060402.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="urlos安装redmine项目管理软件"/></a><div class="content"><a class="title" href="/2021/07/09/urlos%E5%AE%89%E8%A3%85redmine%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/" title="urlos安装redmine项目管理软件">urlos安装redmine项目管理软件</a><time datetime="2021-07-09T04:36:12.000Z" title="发表于 2021-07-09 12:36:12">2021-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/29/jmeter%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E5%8A%9F%E8%83%BD/" title="jmeter基础组件功能"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jmeter基础组件功能"/></a><div class="content"><a class="title" href="/2021/06/29/jmeter%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6%E5%8A%9F%E8%83%BD/" title="jmeter基础组件功能">jmeter基础组件功能</a><time datetime="2021-06-29T02:58:25.000Z" title="发表于 2021-06-29 10:58:25">2021-06-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/08/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-%E6%B5%8B%E8%AF%95%E7%82%B9/" title="文件上传-测试点"><img src="http://cdn.lshck.cn/image/sx/sx03.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="文件上传-测试点"/></a><div class="content"><a class="title" href="/2021/06/08/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0-%E6%B5%8B%E8%AF%95%E7%82%B9/" title="文件上传-测试点">文件上传-测试点</a><time datetime="2021-06-08T04:06:56.000Z" title="发表于 2021-06-08 12:06:56">2021-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/27/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-day01/" title="前端学习-day01"><img src="https://z3.ax1x.com/2021/05/27/2PHmA1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端学习-day01"/></a><div class="content"><a class="title" href="/2021/05/27/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0-day01/" title="前端学习-day01">前端学习-day01</a><time datetime="2021-05-27T09:19:42.000Z" title="发表于 2021-05-27 17:19:42">2021-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/28/%E5%AD%A6%E4%B9%A0%EF%BC%9AVim/" title="学习：Vim"><img src="https://z3.ax1x.com/2021/04/28/gipjxg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="学习：Vim"/></a><div class="content"><a class="title" href="/2021/04/28/%E5%AD%A6%E4%B9%A0%EF%BC%9AVim/" title="学习：Vim">学习：Vim</a><time datetime="2021-04-28T08:55:17.000Z" title="发表于 2021-04-28 16:55:17">2021-04-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 小昕</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'SH6WKttM8Jz5O3pi3AXFAbOI-gzGzoHsz',
+      appKey: 'qOEGQIm3dBnDrqc1dtfbl2yE',
+      placeholder: '记得留下你的昵称和邮箱....可以快速收到回复噢',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.16/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?songxin6";
+            var git_color =['#e4dfd7', '#f9f4dc', '#f7e8aa', '#f7e8aa', '#f8df72', '#fcd217', '#fcc515', '#f28e16', '#fb8b05', '#d85916', '#f43e06'];
+            var git_user ="songxin6";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style>undefined</style><!-- hexo injector body_end end --></body></html>
