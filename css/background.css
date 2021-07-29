@@ -1,4 +1,4 @@
-/*body {
+body {
   background: -webkit-linear-gradient(
     0deg,
     rgba(247, 149, 51, 0.1) 0,
@@ -54,8 +54,5 @@
     rgba(7, 179, 155, 0.1) 86%,
     rgba(109, 186, 130, 0.1) 100%
   );
-}*/
-
-#body-wrap {
-    background: linear-gradient(102.7deg,#fddaff 8.2%,#dfadfc 19.6%,#adcdfc 36.8%,#adfcf4 73.2%,#caf8d0 90.9%);
 }
+
