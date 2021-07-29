@@ -56,7 +56,7 @@
   );
 }*/
 
-body {
+#web_bg {
   background: -webkit-linear-gradient(
     0deg,
     rgba(0, 0, 0, 1) 100%
