@@ -29,3 +29,7 @@
 #footer #footer-wrap a {
     color: var(--font-color)
 }
+
+#bbTimeList {
+    width: 100%
+}
