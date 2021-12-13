@@ -1,4 +1,30 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JMeter配置-响应信息乱码 | August</title><meta name="keywords" content="Jmeter"><meta name="author" content="小忻"><meta name="copyright" content="小忻"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="转载于https:&#x2F;&#x2F;blog.csdn.net&#x2F;AllTheWayForward&#x2F;article&#x2F;details&#x2F;81908940   JMeter响应信息乱码修改jmeter bin目录下的jmeter.properties文件 找到 sampleresult.default.encoding属性，改为UTF-8">
+
+  <script type="text/javascript">
+    (function () {
+      var dayStr = '12/13';
+      if (/^\d{1,2}\/\d{1,2}$/.test(dayStr)) {
+        dayStr = new Date().getFullYear() + '/' + dayStr;
+      }
+      if (!/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(dayStr)) {
+        return ;
+      }
+      var day = new Date(dayStr);
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>JMeter配置-响应信息乱码 | August</title><meta name="keywords" content="Jmeter"><meta name="author" content="小忻"><meta name="copyright" content="小忻"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="转载于https:&#x2F;&#x2F;blog.csdn.net&#x2F;AllTheWayForward&#x2F;article&#x2F;details&#x2F;81908940   JMeter响应信息乱码修改jmeter bin目录下的jmeter.properties文件 找到 sampleresult.default.encoding属性，改为UTF-8">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JMeter配置-响应信息乱码">
 <meta property="og:url" content="http://example.com/2021/08/17/JMeter%E9%85%8D%E7%BD%AE-%E5%93%8D%E5%BA%94%E4%BF%A1%E6%81%AF%E4%B9%B1%E7%A0%81/index.html">

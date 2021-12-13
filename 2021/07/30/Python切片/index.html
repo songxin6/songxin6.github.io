@@ -1,4 +1,30 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Python切片 | August</title><meta name="keywords" content="Python"><meta name="author" content="小忻"><meta name="copyright" content="小忻"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Python切片索引 先了解Python的索引，序列 list 如下    list中元素 a b c d e f g    正下标 0 1 2 3 4 5 6   负下标 -7 -6 -5 -4 -3 -2 -1   1234567正下标与负下标共同构成了Python索引的**有效范围**，超出索引范围会抛出&quot;**IndexError**异常&quot;设序列长度为n：​	正数索引 从">
+
+  <script type="text/javascript">
+    (function () {
+      var dayStr = '12/13';
+      if (/^\d{1,2}\/\d{1,2}$/.test(dayStr)) {
+        dayStr = new Date().getFullYear() + '/' + dayStr;
+      }
+      if (!/^\d{4}\/\d{1,2}\/\d{1,2}$/.test(dayStr)) {
+        return ;
+      }
+      var day = new Date(dayStr);
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Python切片 | August</title><meta name="keywords" content="Python"><meta name="author" content="小忻"><meta name="copyright" content="小忻"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Python切片索引 先了解Python的索引，序列 list 如下    list中元素 a b c d e f g    正下标 0 1 2 3 4 5 6   负下标 -7 -6 -5 -4 -3 -2 -1   1234567正下标与负下标共同构成了Python索引的**有效范围**，超出索引范围会抛出&quot;**IndexError**异常&quot;设序列长度为n：​	正数索引 从">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python切片">
 <meta property="og:url" content="http://example.com/2021/07/30/Python%E5%88%87%E7%89%87/index.html">
